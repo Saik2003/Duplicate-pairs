@@ -1,15 +1,6 @@
 
 # Duplicate Pair Detection
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Future Improvements](#future-improvements)
-- [Sample Images](#sample-images)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 Duplicate Pair Detection is a Python-based project that checks the similarity between two sentences and determines whether they are duplicate or not. This project serves as a prototype and can be further improved for applications such as research paper checking or identifying duplicate questions on platforms like Quora.
