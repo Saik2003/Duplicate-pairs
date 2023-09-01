@@ -58,10 +58,8 @@ def test_fetch_token_features(q1, q2):
     token_features[4] = common_token_count / (min(len(q1_tokens), len(q2_tokens)) + SAFE_DIV)
     token_features[5] = common_token_count / (max(len(q1_tokens), len(q2_tokens)) + SAFE_DIV)
 
-    # Last word of both question is same or not
     token_features[6] = int(q1_tokens[-1] == q2_tokens[-1])
 
-    # First word of both question is same or not
     token_features[7] = int(q1_tokens[0] == q2_tokens[0])
 
     return token_features
@@ -70,17 +68,14 @@ def test_fetch_token_features(q1, q2):
 def test_fetch_length_features(q1, q2):
     length_features = [0.0] * 3
 
-    # Converting the Sentence into Tokens:
     q1_tokens = q1.split()
     q2_tokens = q2.split()
 
     if len(q1_tokens) == 0 or len(q2_tokens) == 0:
         return length_features
 
-    # Absolute length features
     length_features[0] = abs(len(q1_tokens) - len(q2_tokens))
 
-    # Average Token Length of both Questions
     length_features[1] = (len(q1_tokens) + len(q2_tokens)) / 2
 
     strs = list(distance.lcsubstrings(q1, q2))
@@ -92,16 +87,14 @@ def test_fetch_length_features(q1, q2):
 def test_fetch_fuzzy_features(q1, q2):
     fuzzy_features = [0.0] * 4
 
-    # fuzz_ratio
     fuzzy_features[0] = fuzz.QRatio(q1, q2)
 
-    # fuzz_partial_ratio
+
     fuzzy_features[1] = fuzz.partial_ratio(q1, q2)
 
-    # token_sort_ratio
     fuzzy_features[2] = fuzz.token_sort_ratio(q1, q2)
 
-    # token_set_ratio
+    
     fuzzy_features[3] = fuzz.token_set_ratio(q1, q2)
 
     return fuzzy_features
@@ -110,17 +103,15 @@ def test_fetch_fuzzy_features(q1, q2):
 def preprocess(q):
     q = str(q).lower().strip()
 
-    # Replace certain special characters with their string equivalents
     q = q.replace('%', ' percent')
     q = q.replace('$', ' dollar ')
     q = q.replace('₹', ' rupee ')
     q = q.replace('€', ' euro ')
     q = q.replace('@', ' at ')
 
-    # The pattern '[math]' appears around 900 times in the whole dataset.
+    
     q = q.replace('[math]', '')
 
-    # Replacing some numbers with string equivalents (not perfect, can be done better to account for more cases)
     q = q.replace(',000,000,000 ', 'b ')
     q = q.replace(',000,000 ', 'm ')
     q = q.replace(',000 ', 'k ')
@@ -128,9 +119,6 @@ def preprocess(q):
     q = re.sub(r'([0-9]+)000000', r'\1m', q)
     q = re.sub(r'([0-9]+)000', r'\1k', q)
 
-    # Decontracting words
-    # https://en.wikipedia.org/wiki/Wikipedia%3aList_of_English_contractions
-    # https://stackoverflow.com/a/19794953
     contractions = {
         "ain't": "am not",
         "aren't": "are not",
