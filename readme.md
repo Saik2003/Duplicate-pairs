@@ -1,4 +1,4 @@
-```markdown
+
 # Duplicate Pair Detection
 
 ## Table of Contents
@@ -28,24 +28,6 @@ To get started with Duplicate Pair Detection, follow these installation steps:
    pip install -r requirements.txt
    ```
 
-## Usage
-Once you have installed the necessary dependencies, you can use Duplicate Pair Detection to check for duplicate sentences or text pairs. Here's how to use it:
-
-```python
-# Import the necessary modules
-from duplicate_pair_detection import duplicate_checker
-
-# Define two sentences for comparison
-sentence1 = "This is the first sentence."
-sentence2 = "This is the second sentence."
-
-# Check for similarity
-result = duplicate_checker.check_similarity(sentence1, sentence2)
-
-# Print the result
-print("Are the sentences duplicate?", result)
-```
-
 ## Features
 - Determines the similarity between two sentences or text pairs.
 - Provides a simple interface for checking duplicate pairs.
@@ -59,14 +41,6 @@ This project is a basic prototype and can be further enhanced with the following
 - Web-based or GUI interface for user-friendly interaction.
 
 ## Sample Images
-You can find sample images demonstrating the use of Duplicate Pair Detection in the `sample_images` folder. These images show how to input text pairs and check for duplicates.
 
-## Contributing
-Contributions to this project are welcome! If you have ideas for improvements or want to collaborate, please open an issue or submit a pull request.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize this README file further with specific details about your project, usage examples, and any additional information you'd like to include.
+![Sample Image 1](images/Screenshot%202023-09-02%20044213.png.png)
+![Sample Image 2](images/Screenshot%202023-09-02%20044555.png.png)
