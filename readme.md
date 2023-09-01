@@ -42,5 +42,5 @@ This project is a basic prototype and can be further enhanced with the following
 
 ## Sample Images
 
-![Sample Image 1](images/Screenshot%202023-09-02%20044213.png.png)
-![Sample Image 2](images/Screenshot%202023-09-02%20044555.png.png)
+![Sample Image 1]("https://drive.google.com/file/d/15RQ-Dy8M_Eoyv328Js4McnEnC6Q0Jo0z/view?usp=drive_link")
+![Sample Image 2]("https://drive.google.com/file/d/1Y6kLdnnXVaAiuLgitvNNdsLXCtkF0GRX/view?usp=sharing")
