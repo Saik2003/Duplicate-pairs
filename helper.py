@@ -10,7 +10,7 @@ import numpy as np
 from bs4 import BeautifulSoup
 from fuzzywuzzy import fuzz
 
-cv = pickle.load(open('cv.pkl','rb'))
+cv = pickle.load(open('models/cv.pkl','rb'))
 
 
 def test_common_words(q1,q2):
